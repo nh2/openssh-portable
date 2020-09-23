@@ -986,7 +986,7 @@ kex_choose_conf(struct ssh *ssh)
 		 * -cjr
 		 */
 		if (ctos && !log_flag) {
-			logit("SSH: Server;Ltype: Kex;Remote: %s-%d;Enc: %s;MAC: %s;Comp: %s",
+			debug("SSH: Server;Ltype: Kex;Remote: %s-%d;Enc: %s;MAC: %s;Comp: %s",
 			    ssh_remote_ipaddr(ssh),
 			    ssh_remote_port(ssh),
 			    newkeys->enc.name,
@@ -1349,7 +1349,7 @@ kex_exchange_identification(struct ssh *ssh, int timeout_ms,
 		goto out;
 	}
 
-	logit("SSH: Server;Ltype: Version;Remote: %s-%d;Protocol: %d.%d;Client: %.100s",
+	debug("SSH: Server;Ltype: Version;Remote: %s-%d;Protocol: %d.%d;Client: %.100s",
 	      ssh_remote_ipaddr(ssh), ssh_remote_port(ssh),
 	      remote_major, remote_minor, remote_version);
 	

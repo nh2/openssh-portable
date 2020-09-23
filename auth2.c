@@ -280,7 +280,7 @@ input_userauth_request(int type, u_int32_t seq, struct ssh *ssh)
 		goto out;
 	debug("userauth-request for user %s service %s method %s", user, service, method);
 	if (!log_flag) {
-		logit("SSH: Server;Ltype: Authname;Remote: %s-%d;Name: %s",
+		debug("SSH: Server;Ltype: Authname;Remote: %s-%d;Name: %s",
 		      ssh_remote_ipaddr(ssh), ssh_remote_port(ssh), user);
 		log_flag = 1;
 	}

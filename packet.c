@@ -1950,8 +1950,8 @@ sshpkt_final_log_entry (struct ssh *ssh) {
 		total_time = 0;
 	else
 		total_time = monotime_double() - ssh->start_time;
-	
-	logit("SSH: Server;LType: Throughput;Remote: %s-%d;IN: %lu;OUT: %lu;Duration: %.1f;tPut_in: %.1f;tPut_out: %.1f",
+
+	debug("SSH: Server;LType: Throughput;Remote: %s-%d;IN: %lu;OUT: %lu;Duration: %.1f;tPut_in: %.1f;tPut_out: %.1f",
 	      ssh_remote_ipaddr(ssh), ssh_remote_port(ssh),
 	      ssh->stdin_bytes, ssh->fdout_bytes, total_time,
 	      ssh->stdin_bytes / total_time,
